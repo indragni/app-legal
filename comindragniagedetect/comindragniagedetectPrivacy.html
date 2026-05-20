@@ -55,10 +55,11 @@ footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line);
         <li><a href="#introduction">Introduction</a></li>
         <li><a href="#who-we-are">Who we are</a></li>
         <li><a href="#what-we-collect">Information we collect</a></li>
+        <li><a href="#face-data">Face data</a></li>
         <li><a href="#how-we-use">How we use information</a></li>
         <li><a href="#advertising">Advertising</a></li>
         <li><a href="#iap">In-App Purchases</a></li>
-        <li><a href="#children">Children&rsquo;s privacy</a></li>
+        <li><a href="#children">Children’s privacy</a></li>
         <li><a href="#sharing">Sharing</a></li>
         <li><a href="#retention">Retention &amp; deletion</a></li>
         <li><a href="#rights">Your rights</a></li>
@@ -69,35 +70,30 @@ footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line);
       </ol>
     </nav>
 
-    <div class="note">
-      <strong>Entertainment only.</strong> Face Age Scanner Detector renders a playful age band from Apple Vision geometry on your device. The reading is not medical, not biometric identity, and is not advice for hiring, insurance, or any other consequential decision.
-    </div>
-
+    
 <h2 id="introduction">1. Introduction</h2>
-<p>This Privacy Policy explains how <strong>Face Age Scanner Detector</strong> (&ldquo;the App&rdquo;, &ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;us&rdquo;) handles information when you use the App on your iPhone or iPad. The App is built to work with the smallest possible amount of personal information, and the great majority of what it does happens entirely on your device.</p>
+<p>This Privacy Policy explains how <strong>Face Age Scanner Detector</strong> (“the App”, “we”, “our”, or “us”) handles information when you use the App on your iPhone, iPad, or iPod touch. We have designed the App to work with the minimum amount of personal information possible, and the great majority of what the App does happens entirely on your device.</p>
 <p>By downloading, installing, or using the App, you agree to this Privacy Policy. If you do not agree, please uninstall the App and discontinue use.</p>
 
 <h2 id="who-we-are">2. Who we are</h2>
-<p>The App is published by the developer listed on its App Store page (the &ldquo;Developer&rdquo;). For privacy questions you can reach us at the email address in <a href="#contact">Section 14</a>.</p>
+<p>The App is published by the developer listed on its App Store page (the “Developer”). For privacy questions you can reach us at the email address in <a href="#contact">Section 14</a>.</p>
 
 <h2 id="what-we-collect">3. Information we collect</h2>
 <h3>3.1 Information you provide</h3>
-<p>The App does not require you to create an account or submit personal information (such as your name, email, address, or phone number) to use its core features. If you optionally add a birthday for the local cross-check feature, that value is stored on your device only (in local SwiftData) and is never transmitted to us.</p>
+<p>The App does not require you to create an account or submit personal information (such as your name, email, address, or phone number) to use its core features. If a feature ever asks you to provide information (for example, to email us for support), it will be obvious and entirely optional.</p>
 <h3>3.2 Information processed automatically</h3>
 <p>The App itself does <strong>not</strong> use third-party analytics SDKs to track your behaviour, and we do not collect a profile of you or your in-app activity for marketing. iOS will, separately and at the platform level, share standard App Store metrics (downloads, crash counts, anonymous engagement) with us via App Store Connect. Apple aggregates these and we cannot identify individual users from them.</p>
-<h3>3.3 Camera, photos, and on-device Vision processing</h3>
-<ul>
-  <li><strong>Camera</strong>: used only when you start a scan. A single still frame is captured for the Vision pass and is not transmitted to our servers.</li>
-  <li><strong>Photo library</strong>: used only for images you explicitly select to scan. The App reads the selected image, runs Apple Vision face detection and landmarks on your device, and discards the working data when you leave the screen unless you choose to save the readout to your local journal.</li>
-  <li><strong>Vision pipeline</strong>: face rectangles, landmarks, and capture quality are computed locally with Apple&rsquo;s on-device <em>Vision</em> framework. The estimated age &ldquo;band&rdquo; is a deterministic blend of those geometric signals &mdash; it is an entertainment readout, not a clinical or biometric measurement, and the source frames never leave the device.</li>
-  <li><strong>No face embeddings or templates</strong>: we do not build, store, or transmit a biometric template that could be used to recognise you. The Vision data we use describes box dimensions and landmark positions for this one frame only.</li>
-</ul>
-<h3>3.4 Local journal &amp; widgets</h3>
-<p>If you save a readout, the App stores a thumbnail and metadata (estimated age, expression cue, capture quality, timestamp) in local SwiftData on your device. Widgets, the Daily Lab Card, and Live Activities read this local data only. Nothing in the journal is uploaded.</p>
+<h3>3.3 Device sensors and on-device processing</h3>
+<ul><li><strong>Camera</strong>: used only for the in-app feature you initiate (e.g., taking a photo or scanning). Frames are processed on your device and are not transmitted to our servers.</li><li><strong>Photos</strong>: read or saved only at your explicit request. We do not scan your library, and we do not upload your photos.</li></ul>
+
+<h3 id="face-data">3.4 Face data</h3>
+<p>To make live face filters or face-aware effects track your face as you move, the App uses Apple's on-device <strong>Vision</strong> framework to detect, in real time, your face's position on the screen and the centers of your facial features (such as your eyes). These coordinates are computed locally on your device, exist only for the lifetime of a single camera frame (milliseconds), and are used solely to anchor the visual effect on the live preview.</p>
+<p>The App does <strong>not</strong> generate, store, transmit, or share any faceprint, face template, biometric identifier, or face-recognition embedding. Face data is never sent to our servers (we operate none), to Apple, to Google AdMob, or to any other third party. It is not used for identification, authentication, advertising, profile-building, or model training.</p>
+<p>When you take a photo, the saved image is an ordinary JPEG with the visual effect baked in; it contains no separate face-landmark data. Face landmark coordinates are not retained beyond the frame they were computed for — the next frame's detection overwrites them, and they are released entirely when the camera session ends.</p>
 
 <h2 id="how-we-use">4. How we use information</h2>
 <ul>
-  <li>To provide, operate, and maintain the App&rsquo;s features.</li>
+  <li>To provide, operate, and maintain the App’s features.</li>
   <li>To diagnose crashes and fix bugs (using the anonymous crash reports Apple provides through App Store Connect).</li>
   <li>To respond to support requests you choose to send us.</li>
   <li>To comply with legal obligations and enforce our terms.</li>
@@ -105,35 +101,36 @@ footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line);
 <p>We do <strong>not</strong> sell your personal information, and we do not share your personal information for cross-context behavioural advertising.</p>
 
 <h2 id="advertising">5. Advertising</h2>
-<p>This app shows advertisements served through <strong>Google AdMob</strong> (Google Mobile Ads SDK). We have configured AdMob to serve <strong>non-personalized ads only</strong>: Google does not use your previous app activity or profile to choose which ads to show you. We do <strong>not</strong> use Apple&rsquo;s App Tracking Transparency (ATT) to track you across other companies&rsquo; apps and websites, and we do not share an advertising identifier (IDFA) for cross-app tracking.</p>
+<p>This app shows advertisements served through <strong>Google AdMob</strong> (Google Mobile Ads SDK). We have configured AdMob to serve <strong>non-personalized ads only</strong>: Google does not use your previous app activity or profile to choose which ads to show you. We do <strong>not</strong> use Apple’s App Tracking Transparency (ATT) to track you across other companies’ apps and websites, and we do not share an advertising identifier (IDFA) for cross-app tracking.</p>
 <p>To serve and measure ads, AdMob may process limited information such as a device-resettable identifier, IP address, approximate (city-level) location, device model, OS version, and basic ad-interaction events (impression, click). This processing is performed by Google as a separate data controller under its own privacy terms.</p>
-<p>If you are in the European Economic Area, the United Kingdom, or Switzerland, the app presents a Google-certified consent message (UMP) on first launch where you can accept or reject the use of cookies/identifiers for ads. You can change your choice at any time by reinstalling the App.</p>
-<p>For more on Google&rsquo;s data practices: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">policies.google.com/technologies/ads</a> and <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">AdMob &amp; AdSense personalized advertising</a>.</p>
+<p>If you are in the European Economic Area, the United Kingdom, or Switzerland, the app presents a Google-certified consent message (UMP) on first launch where you can accept or reject the use of cookies/identifiers for ads. You can change your choice at any time from the in-app settings or by reinstalling the app.</p>
+<p>For more on Google’s data practices: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">policies.google.com/technologies/ads</a> and <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">AdMob &amp; AdSense personalized advertising</a>.</p>
 
 <h2 id="iap">6. In-App Purchases &amp; Subscriptions</h2>
-<p>The App offers optional in-app purchases (Pro Weekly, Pro Annual, and a one-time Forever Pro unlock). These transactions are processed entirely by Apple through the App Store. Your payment details (such as card number) are handled by Apple &mdash; they are not visible to us. We receive only the receipt that confirms a purchase or subscription is active for your Apple ID, which we use to unlock the corresponding features.</p>
+<p>If the App offers in-app purchases or subscriptions, those transactions are processed entirely by Apple through the App Store. Your payment details (such as card number) are handled by Apple — they are not visible to us. We receive only the receipt that confirms a purchase or subscription is active for your Apple ID, which we use to unlock the corresponding features.</p>
 <ul>
-  <li>Subscriptions auto-renew until cancelled. You can manage or cancel at any time in <em>Settings &rarr; [your name] &rarr; Subscriptions</em> on your device.</li>
+  <li>Subscriptions auto-renew until cancelled. You can manage or cancel at any time in <em>Settings → [your name] → Subscriptions</em> on your device.</li>
   <li>Refunds are handled by Apple at <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>.</li>
   <li>You can restore previously purchased non-consumable items from inside the App.</li>
 </ul>
 
-<h2 id="children">7. Children&rsquo;s privacy</h2>
-<p>The App is rated 4+ on the App Store but is <strong>not</strong> listed in the Kids Category. It is a general-audience entertainment tool. We do not knowingly collect personal information from children under 13 (or the equivalent minimum age in your jurisdiction). If you believe a child has provided us with personal information, please contact us so we can delete it.</p>
+<h2 id="children">7. Children’s privacy</h2>
+<p>We take children’s privacy seriously and design accordingly. If the App is listed in the Kids Category on the App Store, it complies with Apple’s Kids Category requirements: it does not include behavioural advertising, does not include third-party analytics, and does not transmit personal information to third parties. Where applicable, the App also complies with the U.S. Children’s Online Privacy Protection Act (COPPA) and the EU GDPR provisions on children’s data.</p>
+<p>For all other apps, we do not knowingly collect personal information from children under 13 (or the equivalent minimum age in your jurisdiction). If you believe a child has provided us with personal information, please contact us so we can delete it.</p>
 
 <h2 id="sharing">8. How information is shared</h2>
 <p>We share information only in these limited cases:</p>
 <ul>
   <li><strong>With Apple</strong>, as part of distributing the App through the App Store and processing in-app purchases.</li>
-  <li><strong>With Google</strong> (AdMob), only to the extent described in <a href="#advertising">Section 5</a>.</li>
+  <li><strong>With Google</strong> (AdMob), only if the App displays ads, and only to the extent described in <a href="#advertising">Section 5</a>.</li>
   <li><strong>To comply with the law</strong>, if we are required to disclose information by a valid legal request.</li>
   <li><strong>In connection with a business transfer</strong>, where the App or its assets are transferred to another company. Any successor will be bound by terms at least as protective as this Policy.</li>
 </ul>
 
 <h2 id="retention">9. Data retention &amp; deletion</h2>
-<p>Because the App is designed to work without server-side accounts, the data it produces (your saved readouts, journal, settings, birthday cross-check) lives on your device. You can delete it at any time by:</p>
+<p>Because the App is designed to work without server-side accounts, the data it produces (your saved files, settings, history, etc.) lives on your device. You can delete it at any time by:</p>
 <ul>
-  <li>Removing individual readouts from inside the App&rsquo;s journal screen, or removing the birthday in Settings, or</li>
+  <li>Removing the data from inside the App, where the feature exists, or</li>
   <li>Deleting the App from your device, which removes its local data.</li>
 </ul>
 <p>Anonymous, aggregated reports we receive from Apple (downloads, crashes, etc.) are retained only for as long as needed to operate and improve the App.</p>
@@ -141,32 +138,33 @@ footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line);
 <h2 id="rights">10. Your rights</h2>
 <p>Depending on where you live, you may have the following rights regarding personal information we hold about you:</p>
 <ul>
-  <li><strong>Access</strong> &mdash; confirm whether we hold personal information about you and request a copy.</li>
-  <li><strong>Correction</strong> &mdash; ask us to correct information that is inaccurate.</li>
-  <li><strong>Deletion</strong> &mdash; ask us to delete personal information we hold about you.</li>
-  <li><strong>Restriction / objection</strong> &mdash; ask us to limit or stop certain processing.</li>
-  <li><strong>Portability</strong> &mdash; request a copy in a portable format.</li>
-  <li><strong>Withdraw consent</strong> &mdash; where processing is based on your consent (for example, ads consent), you can withdraw it at any time.</li>
-  <li><strong>Lodge a complaint</strong> &mdash; with your local data protection authority (e.g., the ICO in the UK, your national DPA in the EU).</li>
+  <li><strong>Access</strong> — confirm whether we hold personal information about you and request a copy.</li>
+  <li><strong>Correction</strong> — ask us to correct information that is inaccurate.</li>
+  <li><strong>Deletion</strong> — ask us to delete personal information we hold about you.</li>
+  <li><strong>Restriction / objection</strong> — ask us to limit or stop certain processing.</li>
+  <li><strong>Portability</strong> — request a copy in a portable format.</li>
+  <li><strong>Withdraw consent</strong> — where processing is based on your consent (for example, ads consent), you can withdraw it at any time.</li>
+  <li><strong>Lodge a complaint</strong> — with your local data protection authority (e.g., the ICO in the UK, your national DPA in the EU).</li>
 </ul>
-<p>California residents have additional rights under the CCPA/CPRA, including the right to know what categories of personal information are collected and the right to opt out of any &ldquo;sale&rdquo; or &ldquo;sharing&rdquo; of personal information. We do not sell or share personal information as those terms are defined under California law.</p>
+<p>California residents have additional rights under the CCPA/CPRA, including the right to know what categories of personal information are collected and the right to opt out of any “sale” or “sharing” of personal information. We do not sell or share personal information as those terms are defined under California law.</p>
 <p>To exercise any right, contact us at the email in <a href="#contact">Section 14</a>. We will respond within the timeframes required by applicable law.</p>
 
 <h2 id="security">11. Security</h2>
-<p>We use reasonable technical and organisational measures to protect information that we receive. Because the App stores nearly all of its data on your device, your device-level security (passcode, Face ID, Touch ID, encryption-at-rest provided by iOS) is the primary safeguard. No method of electronic storage or transmission is 100% secure, however, and we cannot guarantee absolute security.</p>
+<p>We use reasonable technical and organisational measures to protect information that we receive. Because the App stores most of its data on your device, your device-level security (passcode, Face ID, Touch ID, encryption-at-rest provided by iOS) is the primary safeguard. No method of electronic storage or transmission is 100% secure, however, and we cannot guarantee absolute security.</p>
 
 <h2 id="international">12. International data transfers</h2>
-<p>The App is offered worldwide through the App Store. The limited information processed by Apple and (where applicable) Google may be transferred to and processed in the United States or other countries where those companies operate. Apple and Google rely on appropriate transfer mechanisms (such as Standard Contractual Clauses and the EU-US Data Privacy Framework) for these transfers.</p>
+<p>The App is offered worldwide through the App Store. The limited information processed by Apple and (if applicable) Google may be transferred to and processed in the United States or other countries where those companies operate. Apple and Google rely on appropriate transfer mechanisms (such as Standard Contractual Clauses and the EU-US Data Privacy Framework) for these transfers.</p>
 
 <h2 id="changes">13. Changes to this Privacy Policy</h2>
-<p>We may update this Policy from time to time, for example to reflect changes in the App, in third-party services, or in the law. We will revise the &ldquo;Last updated&rdquo; date below and, where the change is material, we will provide a more prominent notice in the App or on this page.</p>
+<p>We may update this Policy from time to time, for example to reflect changes in the App, in third-party services, or in the law. We will revise the “Last updated” date below and, where the change is material, we will provide a more prominent notice in the App or on this page.</p>
 
 <h2 id="contact">14. Contact us</h2>
 <div class="contact-card">
   <span class="muted">Privacy enquiries</span>
-  <a class="email" href="mailto:sandeep.bhandari@yahoo.co.in?subject=Privacy%20enquiry%20%E2%80%94%20Face%20Age%20Scanner%20Detector">sandeep.bhandari@yahoo.co.in</a>
+  <a class="email" href="mailto:sandeep.bhandari@yahoo.co.in?subject=Privacy%20enquiry%20%E2%80%94%20Face Age Scanner Detector">sandeep.bhandari@yahoo.co.in</a>
   <span class="muted">We aim to respond within 5 business days.</span>
 </div>
+
 
     <footer>
       <p>Last updated: 2026-05-20</p>
