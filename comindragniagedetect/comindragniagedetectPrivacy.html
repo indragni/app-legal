@@ -46,7 +46,7 @@ footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line);
   <main>
     <header>
       <h1>Face Age Scanner Detector</h1>
-      <p class="muted">Privacy Policy &middot; Effective 2026-05-20</p>
+      <p class="muted">Privacy Policy &middot; Effective 2026-05-22</p>
     </header>
 
     <nav class="toc" aria-label="Table of contents">
@@ -86,10 +86,12 @@ footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line);
 <h3>3.3 Device sensors and on-device processing</h3>
 <ul><li><strong>Camera</strong>: used only for the in-app feature you initiate (e.g., taking a photo or scanning). Frames are processed on your device and are not transmitted to our servers.</li><li><strong>Photos</strong>: read or saved only at your explicit request. We do not scan your library, and we do not upload your photos.</li></ul>
 
-<h3 id="face-data">3.4 Face data</h3>
-<p>To make live face filters or face-aware effects track your face as you move, the App uses Apple's on-device <strong>Vision</strong> framework to detect, in real time, your face's position on the screen and the centers of your facial features (such as your eyes). These coordinates are computed locally on your device, exist only for the lifetime of a single camera frame (milliseconds), and are used solely to anchor the visual effect on the live preview.</p>
-<p>The App does <strong>not</strong> generate, store, transmit, or share any faceprint, face template, biometric identifier, or face-recognition embedding. Face data is never sent to our servers (we operate none), to Apple, to Google AdMob, or to any other third party. It is not used for identification, authentication, advertising, profile-building, or model training.</p>
-<p>When you take a photo, the saved image is an ordinary JPEG with the visual effect baked in; it contains no separate face-landmark data. Face landmark coordinates are not retained beyond the frame they were computed for — the next frame's detection overwrites them, and they are released entirely when the camera session ends.</p>
+<h3 id="face-data">3.4 Face data (age-estimation feature)</h3>
+<p>The App lets you select a photo from your Photos library or capture one with the system camera, and then displays a playful <em>entertainment age band</em> for the largest face it finds. It performs this entirely on your device using Apple's on-device <strong>Vision</strong> framework — specifically the requests <code>VNDetectFaceRectanglesRequest</code> (face bounding box), <code>VNDetectFaceLandmarksRequest</code> (normalized 2D landmark points for the eyes, nose, lips, and face contour), and <code>VNDetectFaceCaptureQualityRequest</code> (a single capture-quality score).</p>
+<p>From those Vision outputs the App computes a small set of <strong>scalar geometric metrics</strong> — face aspect ratio, smile openness, landmark symmetry, inter-eye ratio, nose-to-chin ratio, eye vertical position, head pitch, and yaw — and feeds those numbers into a deterministic age-estimation function that returns a low / center / high age band. The result is shown on screen and may optionally be saved by you to the App's on-device journal.</p>
+<p><strong>What is kept on your device</strong> when you save a scan to the journal: the age band (three integers), the scalar metric scores listed above, a short expression label such as "Soft smile geometry," and optionally a thumbnail JPEG of the photo you selected. All of this is stored in local SwiftData with iOS encryption-at-rest. It is never uploaded.</p>
+<p><strong>What is never produced or kept at all:</strong> the App does <strong>not</strong> generate, store, transmit, or share any <strong>faceprint, face template, biometric identifier, or face-recognition embedding</strong>. The raw Vision landmark coordinates are discarded as soon as the scalar metrics are computed (a matter of milliseconds in memory). Face data is never sent to our servers (we operate none), to Apple, to Google AdMob, or to any other third party. It is not used for identification, authentication, advertising, profile-building, or model training. The estimated age is explicitly framed as entertainment synthesis from Vision geometry — not medical imaging, not hiring or insurance advice, and not biometric identity.</p>
+<p>You can delete any saved scan from the in-app journal at any time, or delete the App to remove all local data.</p>
 
 <h2 id="how-we-use">4. How we use information</h2>
 <ul>
@@ -167,7 +169,7 @@ footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line);
 
 
     <footer>
-      <p>Last updated: 2026-05-20</p>
+      <p>Last updated: 2026-05-22</p>
     </footer>
   </main>
 </body>
