@@ -85,6 +85,10 @@ footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line);
 <h3>3.3 Device sensors and on-device processing</h3>
 <p>The app does not request access to device sensors (camera, microphone, photos, location, contacts).</p>
 
+<h3 id="face-data">3.4 Face data</h3>
+<p>To suggest a suitable cartoon style for a photo, the App uses Apple’s on-device <strong>Vision</strong> framework to check whether the photo contains a face. Only a yes/no answer is produced. No facial features, measurements, or coordinates are kept, and the check runs entirely on your device.</p>
+<p>The App does <strong>not</strong> generate, store, transmit, or share any faceprint, face template, biometric identifier, or face-recognition embedding. Face data is never sent to our servers (we operate none), to Apple, to Google AdMob, or to any other third party. It is not used for identification, authentication, advertising, profile-building, or model training.</p>
+<p>Saved images are ordinary photos with any visual effect baked in; they contain no separate face data. Where iOS offers <strong>Face ID</strong>, that authentication is performed entirely by the operating system and the biometric data remains in the Secure Enclave — the App never receives it.</p>
 <h2 id="how-we-use">4. How we use information</h2>
 <ul>
   <li>To provide, operate, and maintain the App’s features.</li>

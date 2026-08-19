@@ -85,6 +85,10 @@ footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line);
 <h3>3.3 Device sensors and on-device processing</h3>
 <ul><li><strong>Camera</strong>: used only for the in-app feature you initiate (e.g., taking a photo or scanning). Frames are processed on your device and are not transmitted to our servers.</li><li><strong>Photos</strong>: read or saved only at your explicit request. We do not scan your library, and we do not upload your photos.</li><li><strong>Face &amp; biometric data</strong>: the App does <strong>not</strong> use facial recognition and does <strong>not</strong> collect, generate, or store face data or biometric identifiers (such as faceprints or facial-geometry maps). On-device subject detection identifies only the general foreground shape in a photo to position the reflection effect; it does not detect, map, or recognize faces, and no such data is ever transmitted off your device.</li></ul>
 
+<h3 id="face-data">3.4 Face data</h3>
+<p><strong>The App does not collect, record, analyse, map, or store face data of any kind.</strong> It does not use ARKit face tracking, the TrueDepth camera’s depth or face-mapping APIs, the Vision framework’s face-detection or face-landmark APIs, or any facial-recognition, faceprint, or face-geometry technology. No facial features are detected, measured, identified, or derived.</p>
+<p>Where the App shows a camera preview, frames exist only momentarily in your device’s memory to draw the on-screen image and are then discarded. Nothing about your face is written to disk, transmitted off your device, shared with us or any third party, or retained.</p>
+<p>Where iOS offers <strong>Face ID</strong> or Touch ID, that authentication is performed entirely by the operating system and the underlying biometric data remains in the Secure Enclave on your device. The App never receives, sees, or stores it.</p>
 <h2 id="how-we-use">4. How we use information</h2>
 <ul>
   <li>To provide, operate, and maintain the App’s features.</li>
